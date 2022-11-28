@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   resources :movies, only: [:index, :show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # route for our custom method, summary (created in movie_summary_serializer file )
+  get '/movies/:id/summary', to: 'movies#summary'
+  # route for movie collection
+  get '/movie_summaries', to: 'movies#summaries'
 end
